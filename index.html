@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Weathosaurus</title>
+  <link rel="shortcut icon" href="https://weathosaurus.tshxin.repl.co/favicon.ico" />
+  
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <!-- search icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+  <!-- gaegu font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+</head>
+  
+  <body>
+    <div class="input">
+      <img src="dinoLogo.svg" width="450" height = auto>  <br>
+      <input id="textbox" type="text" class="inputValue" placeholder = "Search location. Ex: London"> 
+      <input type="submit" class="button" id="buttonID" value="➜">
+      <br><br><br>
+
+       <div style="font-family: 'Gaegu', cursive; color: #517a5e;" class="display">
+         <h2 class="name"></h2>
+         <p class="temp"></p>
+         <p class="pressure"></p>
+         <p class="dscp"></p>
+         <p class="humidity"></p>
+         <p class="wind"></p>
+         <p class="feels-like"></p>
+         <p class="vis"></p>
+         <br><br>
+       </div>
+
+      <p>weathosaurus by Tina X</p>
+      <p>Improved by bdcl</p>
+      
+    </div>
+    
+    <div id="canvas-holder" style=" z-index: 0; position: relative; height: 250px;">
+    <div style="text-align: center; position: absolute; bottom: 0; left: 0; right: 0;">
+     <canvas id="myCanvas" width="250" height="250" style="border: 0px solid black;">Your browser doesn't support the canvas element!</canvas> 
+    </div>
+      
+      
+  </div>
+
+   
+   
+
+ 
+   <script src="script.js"></script>
+  
+</body>
+
+</html>
