@@ -1,0 +1,87 @@
+html {
+  height: 100%;
+  width: 100%;
+
+}
+
+*{
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f2f2f2; 
+}
+
+.input{
+  position: absolute; 
+  text-align: center;
+  width: 100%; 
+  margin: 100px 0;
+  padding-top: 0px;
+  top: 100px; 
+  z-index: 99;
+}
+
+
+input[type="text"]{
+  height: 75px;
+  width: 400px;
+  background: #85c395;
+  font-family: 'Gaegu', cursive;
+  font-size: 30px;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  color: white;
+}
+::placeholder{
+  color: white;
+}
+
+input[type=text]:focus{
+  background: #8bb297;     /* oranges! yey */
+}
+
+
+input[type="submit"]{
+    height:75px;
+  padding-right: 20px;
+  padding-left: 10px;
+  width: 50px; 
+  border-radius: 50px; 
+  background-color: #85c395; 
+  font-size: 25px;
+  color: white; 
+  border: none; 
+  z-index: 99;
+  
+  transition-duration: 0.3s;
+}
+input[type="submit"]:hover{
+  background-color: #8bb297;
+  cursor: pointer; 
+  transition-duration: 0.7s;
+}
+
+
+
+.display{
+  text-align: center;
+  color: #517a5e;
+}
+
+p{
+  font-family: "Gaegu",cursive;
+  font-size:25px;
+  padding: 0px 10% 0px 10%;
+}
+h2{
+  font-size: 30px;
+  color: #517a5e;
+}
+#myCanvas{
+  display: show;
+}
