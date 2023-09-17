@@ -1,6 +1,3 @@
-function round(a,b){
-return Math.round(a*(10**b))/(10**b)
-};
 var button = document.querySelector('.button');
 var inputValue = document.querySelector('.inputValue');
 console.log(button);
@@ -20,17 +17,14 @@ button.addEventListener('click',function(){
   .then(response => response.json())
   //.then(data =>console.log(data))
   .then(data => {
-    console.log(data);
-    
+
     document.querySelector(".name").innerHTML=data.name + ", "+data.sys.country;
     
-    document.querySelector(".temp").innerHTML= "Temperature: "+Math.round(data.main.temp- 273.15)+" °C (" +       Math.round(((data.main.temp- 273.15)*9/5)+32) + " °F)";
-    document.querySelector(".dscp").innerHTML=data.weather.map(x => x.description)
-    document.querySelector(".humidity").innerHTML="Humidity: "+data.main.humidity +"%";
-    document.querySelector(".vis").innerHTML="Visibility: "+(round(data.visibility*0.0006213712,1)) +" mi";
-    document.querySelector(".pressure").innerHTML="Pressure: "+data.main.pressure+" milibars";
-    document.querySelector(".wind").innerHTML= "Wind: "+round((((data.wind.speed)*3.6/1.852))*1.150779,1)+" mph, "+Math.round((data.wind.speed)*3.6) + "km/hr or "+ Math.round((data.wind.speed)*3.6/1.852)+" knots "+data.wind.deg+"° from the North, with gusts up to "+round((((data.wind.gust)*3.6/1.852))*1.150779,1)+" mph, "+Math.round((data.wind.gust)*3.6) + "km/hr or "+ Math.round((data.wind.gust)*3.6/1.852)+" knots ";
-    document.querySelector(".feels-like").innerHTML= "Feels like: "+Math.round(data.main.feels_like- 273.15)+" °C (" +       Math.round(((data.main.feels_like- 273.15)*9/5)+32) + " °F)";
+    document.querySelector(".temp").innerHTML= Math.round(data.main.temp- 273.15)+" °C";
+    document.querySelector(".dscp").innerHTML=data.weather[0].description;
+    document.querySelector(".humidity").innerHTML=data.main.humidity +"%" + " humidity";
+    document.querySelector(".pressure").innerHTML=data.main.pressure+" milibars";
+    document.querySelector(".wind").innerHTML= Math.round((data.wind.speed)*3.6) + "km/hr or "+ Math.round((data.wind.speed)*3.6/1.852)+" knots "+data.wind.deg+"° from the North";
     
     
     
@@ -39,10 +33,6 @@ button.addEventListener('click',function(){
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 
     //side numbers
-    var visibility = round(data.visibility*0.0006213712,1)
-    var pressure_len = String(data.main.pressure).length;
-    var pressure = String(data.main.pressure)[pressure_len-2] + String(data.main.pressure)[pressure_len-1] +"0";
-    console.log(pressure);
     var temp_in_F = Math.round((Math.round(data.main.temp- 273.15)*9/5)+32); 
     var humidity = data.main.humidity; 
     var coeff = Math.log(humidity/100)+(17.625*temp_in_F)/(243.04+temp_in_F)
@@ -59,8 +49,6 @@ button.addEventListener('click',function(){
     ctx.fillText(data.name, 110,100); //location
     ctx.fillText(temp_in_F+ " (°F)", 70, 115); //temp
     ctx.fillText(dewPoint +" (°F)", 70, 145);  //dewpoint
-    ctx.fillText(pressure +" (mb)", 150, 115);
-    ctx.fillText(visibility +" (mi)", 50, 130);
     // ctx.fillText(wind_ang,50,50); wind degree
     
     rads = wind_ang*(Math.PI/180);   
@@ -150,3 +138,4 @@ button.addEventListener('click',function(){
 
 
 })
+
