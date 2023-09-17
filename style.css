@@ -12,6 +12,7 @@ html {
 
 body{
   background-color: #f2f2f2; 
+  overscroll-behavior-y: none; 
 }
 
 .input{
@@ -29,27 +30,30 @@ input[type="text"]{
   height: 75px;
   width: 400px;
   background: #85c395;
-  font-family: 'Gaegu', cursive;
-  font-size: 30px;
-  padding: 20px;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 20px;
+  padding: 20px 35px;
   border: none;
   border-radius: 50px;
   outline: none;
   color: white;
+  transition: 0.3s; 
 }
 ::placeholder{
   color: white;
+  font-size: 20px;
 }
 
 input[type=text]:focus{
   background: #8bb297;     /* oranges! yey */
+  transition: 0.3s; 
 }
 
 
 input[type="submit"]{
     height:75px;
   padding-right: 20px;
-  padding-left: 10px;
+  padding-left: 20px;
   width: 50px; 
   border-radius: 50px; 
   background-color: #85c395; 
@@ -58,7 +62,7 @@ input[type="submit"]{
   border: none; 
   z-index: 99;
   
-  transition-duration: 0.3s;
+  transition: 0.3s;
 }
 input[type="submit"]:hover{
   background-color: #8bb297;
@@ -74,13 +78,15 @@ input[type="submit"]:hover{
 }
 
 p{
-  font-family: "Gaegu",cursive;
+  font-family: 'Red Hat Display', sans-serif;
   font-size:25px;
   padding: 0px 10% 0px 10%;
+  line-height: 1.8;
 }
 h2{
   font-size: 30px;
   color: #517a5e;
+  font-family: 'Red Hat Display', sans-serif; 
 }
 #myCanvas{
   display: show;
